@@ -1,0 +1,149 @@
+<!-- Contact Start -->
+<div class="container-fluid contact">
+  <div class="container py-5">
+    <div class="p-5 bg-light rounded">
+      <div class="row g-4">
+        <div class="col-12">
+          <div class="text-center mx-auto" style="max-width: 700px">
+            <h1 class="text-primary">Sign Up</h1>
+            <!-- <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
+          </div>
+        </div>
+        <div class="col-lg-7 signup">
+          <form [formGroup]="signUpForm" (ngSubmit)="onSignupSubmit()">
+            <div>
+              <input
+                type="text"
+                formControlName="userName"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Username"
+              />
+
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'userName') &&
+                  signUpForm.controls['userName'].dirty
+                "
+              >
+                Username is <strong>required</strong>
+              </span>
+            </div>
+            <div>
+              <input
+                type="email"
+                formControlName="email"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Email"
+              />
+              <span
+                class="text-danger"
+                *ngIf="signUpForm.hasError('email', 'email')"
+              >
+                Please enter a valid email address
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'email') &&
+                  signUpForm.controls['email'].dirty
+                "
+              >
+                Email is <strong>required</strong>
+              </span>
+            </div>
+            <div>
+              <input
+                type="text"
+                formControlName="mobile"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Mobile No."
+              />
+
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'mobile') &&
+                  signUpForm.controls['mobile'].dirty
+                "
+              >
+                Mobile No. is <strong>required</strong>
+              </span>
+            </div>
+            <div>
+              <input
+                type="date"
+                formControlName="dob"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Date of Birth"
+              />
+
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'dob') &&
+                  signUpForm.controls['dob'].dirty
+                "
+              >
+                Date of Birth is <strong>required</strong>
+              </span>
+              <span
+                class="text-danger"
+                *ngIf="agevalidate"
+              >
+                Minimum age required is 18
+              </span>
+            </div>
+
+            <div>
+              <input
+                type="password"
+                formControlName="password"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Password"
+              />
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'password') &&
+                  signUpForm.controls['password'].dirty
+                "
+              >
+                Password is <strong>required</strong>
+              </span>
+            </div>
+            <div>
+              <input
+                type="text"
+                formControlName="confirmPassword"
+                class="w-100 form-control border-0 py-3 mb-4"
+                placeholder="Enter Your Confirm Password"
+              />
+
+              <span
+                class="text-danger"
+                *ngIf="
+                  signUpForm.hasError('required', 'confirmPassword') &&
+                  signUpForm.controls['confirmPassword'].dirty
+                "
+              >
+                Confirm Password is <strong>required</strong>
+              </span>
+            </div>
+            <button
+              class="w-100 btn form-control border-secondary py-3 bg-white text-primary"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+          <div class="info my-3 justify-content-between">
+            <a href="/signin">Already account</a>
+            <a href=""><u>Privacy Policy</u></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
